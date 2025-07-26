@@ -14,7 +14,7 @@ int main() {
     scanf(" %c", &estado1);
 
     printf("Digite o código: "); 
-    scanf("%s", &codigo1[03]);  //inclusão de array para armazenar dois digitos como codigo
+    scanf("%s", codigo1);
 
     // Modo que encontrei online para que seja possível a inserção de espaço a variavel, onde foi necessario incluir a bliblioteca strinh
     // onde o comando fgets lê a linah inserida, o sizeoff defino o tamanho maximo a ser lida e o comando stdin aguarda a inserção via teclado
@@ -41,7 +41,7 @@ int main() {
     scanf(" %c", &estado2);
 
     printf("Digite o código: ");
-    scanf("%s", &codigo2[03]);  
+    scanf("%s", codigo2); 
 
     printf("Digite a cidade: ");
     getchar();
