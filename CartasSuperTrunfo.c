@@ -3,7 +3,7 @@
 
 int main() {
     char estado1, estado2;  // variavel dos estados somente uma letra
-    char codigo1[02], codigo2[02];  // variavel char com os codigos com até 2 digitos
+    char codigo1[03], codigo2[03];  // variavel char com os codigos com até 3 digitos, para que seja possivel o codigo apresentar formato 00 com caractere nulo
     char cidade1[50], cidade2[50];  // Aumentei o tamanho para nomes maiores
     int populacao1, populacao2, pontosTurismo1, pontosTurismo2; // as duas variaveis inteiras população e pontos turisticos
     float area1, area2, pib1, pib2; // as duas variaveis com casas decimais area e pib
@@ -14,7 +14,7 @@ int main() {
     scanf(" %c", &estado1);
 
     printf("Digite o código: "); 
-    scanf("%s", codigo1);
+    scanf("%s", &codigo1[03]);  //inclusão de array para armazenar dois digitos como codigo
 
     // Modo que encontrei online para que seja possível a inserção de espaço a variavel, onde foi necessario incluir a bliblioteca strinh
     // onde o comando fgets lê a linah inserida, o sizeoff defino o tamanho maximo a ser lida e o comando stdin aguarda a inserção via teclado
@@ -41,7 +41,7 @@ int main() {
     scanf(" %c", &estado2);
 
     printf("Digite o código: ");
-    scanf("%s", codigo2);  
+    scanf("%s", &codigo2[03]);  
 
     printf("Digite a cidade: ");
     getchar();
