@@ -41,7 +41,7 @@ int main() {
     scanf(" %c", &estado2);
 
     printf("Digite o código: ");
-    scanf("%s", codigo2); 
+    scanf("%s", codigo2);
 
     printf("Digite a cidade: ");
     getchar();
