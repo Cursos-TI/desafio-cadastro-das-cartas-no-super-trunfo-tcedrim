@@ -10,7 +10,7 @@ int main() {
     float area1, area2, pib1, pib2; // as duas variaveis com casas decimais area e pib
     float densidadePop1, densidadePop2, pibPerCapita1, pibPerCapita2; // variaveis para calcular a densidade populacional e pib per capita
 
-    printf("*** Jogo Super trunfo - Desafio Aventureiro***"); //Para ficar bonitinho
+    printf("*** Jogo Super trunfo - Desafio mestre***"); //Para ficar bonitinho
     // coleta das informações da primeira carta
     printf("Digite as informações da primeira carta\n");
     printf("Digite o estado: ");
@@ -64,10 +64,19 @@ int main() {
     scanf("%f", &pib2);
 
     // cálculo da densidade populacional e PIB per capita
-    densidadePop1 = (float) populacao1 / area1; //Necessária a inclusão do float devido a população ser numero inteiro e aumentar a precisão da densidade
-    pibPerCapita1 = (float) (pib1 * 1.0e9) / populacao1;  //Necessária a inclusão do float devido a população ser numero inteiro e aumentar a precisão do PIB Per Capita
-    densidadePop2 = (float) populacao2 / area2;
-    pibPerCapita2 = (float) (pib2 * 1.0e9) / populacao2;  // mutiplicação do pib por 1000000000 para conversão de bilhões de reais para reais
+    if (area1 != 0) {    
+    densidadePop1 = (float)populacao1 / area1;} 
+    else {    densidadePop1 = 0.0f}; // Define um valor seguro
+    if (area2 != 0) {    
+    densidadePop2 = (float)populacao2 / area2;} 
+    else {    densidadePop2 = 0.0f}; // Define um valor seguro
+    if (populacao1 != 0) {    
+    pibPerCapita1 = (float) (pib1 * 1.0e9) / populacao1;} 
+    else {    pibPerCapita1 = 0.0f}; // Define um valor seguro
+    if (populacao2 != 0) {    
+    pibPerCapita2 = (float) (pib2 * 1.0e9) / populacao2;} 
+    else {    pibPerCapita2 = 0.0f}; // Define um valor seguro
+
 
     // cálculo de superpoder
     float superpoder1 = (float) populacao1 + area1 + pib1 + (float) pontosTurismo1 + pibPerCapita1 + (1.0f /densidadePop1); // o superpoder é a soma de todos os atributos da carta 01
@@ -78,7 +87,7 @@ int main() {
     printf("Estado: %c\n", estado1);
     printf("Código: %c%s\n", estado1, codigo1);
     printf("Cidade: %s\n", cidade1);
-    printf("População: %d\n", populacao1);
+    printf("População: %lu\n", populacao1);
     printf("Pontos Turísticos: %d\n", pontosTurismo1);
     printf("Área: %.2f km²\n", area1);
     printf("PIB: %.2f bilhões de reais\n", pib1);
@@ -91,7 +100,7 @@ int main() {
     printf("Estado: %c\n", estado2);
     printf("Código: %c%s\n", estado2, codigo2);
     printf("Cidade: %s\n", cidade2);
-    printf("População: %d\n", populacao2);
+    printf("População: %lu\n", populacao2);
     printf("Pontos Turísticos: %d\n", pontosTurismo2);
     printf("Área: %.2f km²\n", area2);
     printf("PIB: %.2f bilhões de reais\n", pib2);
