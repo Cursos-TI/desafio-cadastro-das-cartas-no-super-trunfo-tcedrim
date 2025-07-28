@@ -65,13 +65,13 @@ int main() {
 
     // cálculo da densidade populacional e PIB per capita
     densidadePop1 = (float) populacao1 / area1; //Necessária a inclusão do float devido a população ser numero inteiro e aumentar a precisão da densidade
-    pibPerCapita1 = (float) (pib1 * 10e8) / populacao1;  //Necessária a inclusão do float devido a população ser numero inteiro e aumentar a precisão do PIB Per Capita
+    pibPerCapita1 = (float) (pib1 * 1.0e9) / populacao1;  //Necessária a inclusão do float devido a população ser numero inteiro e aumentar a precisão do PIB Per Capita
     densidadePop2 = (float) populacao2 / area2;
-    pibPerCapita2 = (float) (pib2 * 10e8) / populacao2;  // mutiplicação do pib por 1000000000 para conversão de bilhões de reais para reais
+    pibPerCapita2 = (float) (pib2 * 1.0e9) / populacao2;  // mutiplicação do pib por 1000000000 para conversão de bilhões de reais para reais
 
     // cálculo de superpoder
-    float superpoder1 = (float) populacao1 + area1 + pib1 + (float) pontosTurismo1 + pibPerCapita1 + (1 /densidadePop1); // o superpoder é a soma de todos os atributos da carta 01
-    float superpoder2 = (float) populacao2 + area2 + pib2 + (float) pontosTurismo2 + pibPerCapita2 + (1 /densidadePop2); // o superpoder é a soma de todos os atributos da carta 02
+    float superpoder1 = (float) populacao1 + area1 + pib1 + (float) pontosTurismo1 + pibPerCapita1 + (1.0f /densidadePop1); // o superpoder é a soma de todos os atributos da carta 01
+    float superpoder2 = (float) populacao2 + area2 + pib2 + (float) pontosTurismo2 + pibPerCapita2 + (1.0f /densidadePop2); // o superpoder é a soma de todos os atributos da carta 02
 
     // impressão dos dados da carta 01
     printf("\nCarta 1:\n"); //\n inclusos para separar a mostra de dados da coleta 
