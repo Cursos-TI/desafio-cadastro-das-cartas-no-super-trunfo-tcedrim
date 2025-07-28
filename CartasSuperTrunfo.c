@@ -79,8 +79,14 @@ int main() {
 
 
     // cálculo de superpoder
-    float superpoder1 = (float) populacao1 + area1 + pib1 + (float) pontosTurismo1 + pibPerCapita1 + (1.0f /densidadePop1); // o superpoder é a soma de todos os atributos da carta 01
-    float superpoder2 = (float) populacao2 + area2 + pib2 + (float) pontosTurismo2 + pibPerCapita2 + (1.0f /densidadePop2); // o superpoder é a soma de todos os atributos da carta 02
+    float inversoDensidade1 = 0.0f;
+    if (densidadePop1 != 0) 
+    {    inversoDensidade1 = 1.0f / densidadePop1;}
+    float superpoder1 = (float) populacao1 + area1 + pib1 + (float)pontosTurismo1 + pibPerCapita1 + inversoDensidade1;
+    float inversoDensidade2 = 0.0f;
+    if (densidadePop2 != 0) 
+    {    inversoDensidade2 = 1.0f / densidadePop2;}
+    float superpoder2 = (float) populacao2 + area2 + pib2 + (float) pontosTurismo2 + pibPerCapita2 + inversoDensidade2;
 
     // impressão dos dados da carta 01
     printf("\nCarta 1:\n"); //\n inclusos para separar a mostra de dados da coleta 
